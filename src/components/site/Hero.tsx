@@ -51,7 +51,7 @@ export function Hero() {
             />
           )}
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-br from-deep/95 via-deep/70 to-deep/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-hero-overlay/95 via-hero-overlay-fade/75 to-hero-overlay/90" />
 
         <div className="relative mx-auto flex h-full max-w-[1280px] flex-col justify-between px-5 pb-14 pt-32 lg:px-8 lg:pb-20 lg:pt-40">
           <motion.h1
