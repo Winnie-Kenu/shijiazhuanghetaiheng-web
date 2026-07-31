@@ -1,6 +1,9 @@
 import { MasonryGallery } from "./MasonryGallery";
+import { VideoGallery } from "./VideoGallery";
 import { Reveal, RevealText } from "./Reveal";
-import { galleryImages } from "@/lib/hospital-images";
+import { galleryImages, treatmentImages } from "@/lib/hospital-images";
+
+const GALLERY = [...galleryImages, ...treatmentImages.slice(15, 16)];
 
 export function GallerySection() {
   return (
@@ -22,7 +25,11 @@ export function GallerySection() {
       </div>
 
       <div className="mt-14">
-        <MasonryGallery images={galleryImages} />
+        <VideoGallery />
+      </div>
+
+      <div className="mt-14">
+        <MasonryGallery images={GALLERY} />
       </div>
     </section>
   );
