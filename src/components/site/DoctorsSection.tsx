@@ -3,16 +3,16 @@ import { Reveal, RevealText } from "./Reveal";
 import { doctorsImages } from "@/lib/hospital-images";
 
 const DOCTORS = [
-  { name: "Prof. Zhang Daning", role: "Master of Chinese Medicine", ratio: "3 / 4" },
-  { name: "Prof. Yang Hongtao", role: "Chief Nephrologist", ratio: "4 / 5" },
-  { name: "Prof. Cheng Xiaohong", role: "Integrative Nephrology", ratio: "1 / 1" },
-  { name: "Prof. Liu Xusheng", role: "Renal Research Lead", ratio: "5 / 7" },
-  { name: "Prof. Deng Yueyi", role: "Chronic Kidney Disease", ratio: "4 / 5" },
-  { name: "Prof. Wang Yi", role: "Acupuncture & Moxibustion", ratio: "3 / 4" },
-  { name: "Prof. Zhang Youkang", role: "Dialysis Withdrawal Program", ratio: "16 / 11" },
-  { name: "Prof. Zheng Falei", role: "Toxin-Removing Treatment", ratio: "1 / 1" },
-  { name: "Prof. Liu Guangzhen", role: "International Consultation", ratio: "4 / 5" },
-  { name: "Prof. Sun Wei", role: "Renal Pathology", ratio: "3 / 4" },
+  { name: "Prof. Zhang Daning", role: "Master of Chinese Medicine" },
+  { name: "Prof. Yang Hongtao", role: "Chief Nephrologist" },
+  { name: "Prof. Cheng Xiaohong", role: "Integrative Nephrology" },
+  { name: "Prof. Liu Xusheng", role: "Renal Research Lead" },
+  { name: "Prof. Deng Yueyi", role: "Chronic Kidney Disease" },
+  { name: "Prof. Wang Yi", role: "Acupuncture & Moxibustion" },
+  { name: "Prof. Zhang Youkang", role: "Dialysis Withdrawal Program" },
+  { name: "Prof. Zheng Falei", role: "Toxin-Removing Treatment" },
+  { name: "Prof. Liu Guangzhen", role: "International Consultation" },
+  { name: "Prof. Sun Wei", role: "Renal Pathology" },
 ];
 
 export function DoctorsSection() {
@@ -34,20 +34,19 @@ export function DoctorsSection() {
         </h2>
       </div>
 
-      <ul className="mt-14 columns-2 gap-4 md:columns-3 xl:columns-4 sm:gap-5">
+      <ul className="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5 lg:grid-cols-5">
         {DOCTORS.map((doctor, i) => {
           const image = doctorsImages[i % doctorsImages.length];
           if (!image) return null;
           return (
-            <li key={doctor.name} className="mb-4 break-inside-avoid sm:mb-5">
+            <li key={doctor.name}>
               <article className="group">
                 <EditorialImage
                   image={{ ...image, alt: `${doctor.name}, ${doctor.role}. ${image.alt}` }}
-                  ratio={doctor.ratio}
                   width={720}
                   overlay={
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-3 p-5 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                      <p className="text-xs uppercase tracking-[0.2em] text-deep-foreground/80">
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-3 p-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                      <p className="text-xs uppercase tracking-[0.2em] text-foreground">
                         {doctor.role}
                       </p>
                     </div>

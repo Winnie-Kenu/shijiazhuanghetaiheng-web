@@ -39,7 +39,7 @@ const BLOCKS: EditorialBlock[] = [
         body: "Usually after a few days of treatment the urine starts to change — becoming smelly, light yellow or cloudy with discharged floccules. These are early signs the kidneys are repairing, and creatinine falls accordingly.",
       },
     ],
-    images: treatmentImages.slice(8, 12),
+    images: treatmentImages.slice(0, 5),
     tone: "tinted",
   },
   {
@@ -58,7 +58,7 @@ const BLOCKS: EditorialBlock[] = [
         body: "Significant improvements often appear within days, with changes in urine colour and consistency signalling repair. As function returns, creatinine declines naturally, allowing a reduction or even cessation of dialysis.",
       },
     ],
-    images: treatmentImages.slice(12, 16),
+    images: treatmentImages.slice(5, 10),
     reverse: true,
   },
   {
@@ -77,7 +77,7 @@ const BLOCKS: EditorialBlock[] = [
         body: "Even at stage 5, our patented apparatus delivers active ingredients directly to damaged tissue, supporting residual function and, for many patients, reducing dialysis frequency.",
       },
     ],
-    images: [...treatmentImages.slice(16), ...generalImages],
+    images: [...treatmentImages.slice(10, 14), ...generalImages.slice(0, 1)],
     tone: "tinted",
   },
 ];

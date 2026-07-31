@@ -47,7 +47,7 @@ export function SiteHeader() {
               scrolled ? "text-foreground" : "text-deep-foreground",
             )}
           >
-            Hetaiheng Kidney Hospital
+            Shijiazhuang Hetaiheng
           </span>
         </a>
 
