@@ -64,12 +64,12 @@ export function Hero() {
             <span className="block">without dialysis</span>
           </motion.h1>
 
-          <div className="absolute bottom-20 right-5 w-full max-w-md lg:bottom-24 lg:right-8 lg:max-w-lg">
+          <div className="absolute bottom-10 right-5 w-full max-w-md text-right lg:bottom-14 lg:right-8 lg:max-w-lg">
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.45 }}
-              className="text-sm leading-relaxed text-deep-foreground/90 sm:text-base"
+              className="text-right text-xs leading-relaxed text-deep-foreground/90 sm:text-sm"
             >
               Our Systematic Chinese Medicine Treatment has helped numerous renal failure patients
               from 148 countries to significantly lower their creatinine, promote GFR, and avoid
@@ -80,8 +80,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.6 }}
-              className="mt-8 flex flex-wrap items-center gap-3"
+              className="mt-8 flex flex-wrap items-center justify-end gap-3"
             >
+
               <Button asChild size="lg" className="rounded-none px-7">
                 <a href="#contact">
                   Book a free consultation

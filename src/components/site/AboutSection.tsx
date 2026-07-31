@@ -10,7 +10,7 @@ const STATS = [
 ];
 
 export function AboutSection() {
-  const [a, b, c, d, e] = aboutImages;
+  const [a, b, c, d, e, f] = aboutImages;
 
   return (
     <section id="about" aria-labelledby="about-heading" className="bg-muted/50 py-24 lg:py-36">
@@ -24,8 +24,10 @@ export function AboutSection() {
           <div className="flex flex-col gap-4 sm:gap-5">
             {c && <EditorialImage image={c} ratio="4 / 5" width={720} />}
             {d && <EditorialImage image={d} ratio="5 / 7" width={720} />}
+            {f && <EditorialImage image={f} ratio="1 / 1" width={620} />}
           </div>
         </div>
+
 
         <div className="lg:sticky lg:top-28">
           <Reveal>
