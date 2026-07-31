@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { heroDesktopImages, heroMobileImages, img } from "@/lib/hospital-images";
+import { heroDesktopImages, heroMobileImages, coverImg } from "@/lib/hospital-images";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const SLIDE_MS = 6500;
@@ -16,7 +16,6 @@ const STATS = [
   { value: "40,000m²", label: "Hospital campus" },
   { value: "20+", label: "National-level experts" },
 ];
-
 
 export function Hero() {
   const isMobile = useIsMobile();
@@ -34,79 +33,69 @@ export function Hero() {
 
   return (
     <section id="top" aria-label="Advanced kidney care without dialysis" className="relative isolate">
-      <div className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
+      <div className="relative h-[85svh] min-h-[640px] w-full overflow-hidden">
         <AnimatePresence mode="sync">
           {slide && (
             <motion.img
               key={slide.file}
-              src={img(slide.file, 1920)}
+              src={coverImg(slide.file, 1920, 1080)}
               alt={slide.alt}
               fetchPriority={index === 0 ? "high" : "auto"}
               loading={index === 0 ? "eager" : "lazy"}
               decoding="async"
-              initial={{ opacity: 0, scale: 1.12 }}
+              initial={{ opacity: 0, scale: 1.08 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ opacity: { duration: 1.2 }, scale: { duration: 8, ease: "linear" } }}
-              className="absolute inset-0 h-full w-full object-contain"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           )}
         </AnimatePresence>
-        <div className="absolute inset-0 bg-gradient-to-b from-deep/85 via-deep/60 to-deep/90" />
+        <div className="absolute inset-0 bg-gradient-to-br from-hero-overlay/95 via-hero-overlay-fade/75 to-hero-overlay/90" />
 
-        <div className="relative mx-auto flex h-full max-w-[1280px] flex-col justify-end px-5 pb-14 pt-28 lg:px-8 lg:pb-20">
+        <div className="relative mx-auto h-full max-w-[1280px] px-5 lg:px-8">
           <motion.h1
             initial={{ opacity: 0, y: 30, filter: "blur(14px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="mt-[30px] max-w-4xl font-display text-[clamp(2.6rem,7vw,5.5rem)] leading-[1.02] text-deep-foreground text-balance-tight"
+            className="absolute left-5 top-32 max-w-3xl font-display text-[clamp(2.4rem,6vw,5rem)] leading-[1.05] text-deep-foreground text-balance-tight lg:left-8 lg:top-40"
           >
-            Advanced kidney care without dialysis
+            Advanced kidney care{" "}
+            <span className="block">without dialysis</span>
           </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.45 }}
-            className="mt-6 max-w-2xl text-sm leading-relaxed text-deep-foreground/80 sm:text-base"
+          <div className="absolute bottom-20 right-5 w-full max-w-md lg:bottom-24 lg:right-8 lg:max-w-lg">
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.45 }}
+              className="text-sm leading-relaxed text-deep-foreground/90 sm:text-base"
+            >
+              Our Systematic Chinese Medicine Treatment has helped numerous renal failure patients
+              from 148 countries to significantly lower their creatinine, promote GFR, and avoid
+              dialysis.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.6 }}
+              className="mt-8 flex flex-wrap items-center gap-3"
+            >
+              <Button asChild size="lg" className="rounded-none px-7">
+                <a href="#contact">
+                  Book a free consultation
+                  <ArrowRight className="size-4" aria-hidden />
+                </a>
+              </Button>
+            </motion.div>
+          </div>
+
+          <div
+            className="absolute bottom-8 left-5 flex items-center gap-3 lg:left-8"
+            role="tablist"
+            aria-label="Hero slides"
           >
-            Our systematic Chinese medicine Toxin-Removing Treatment has helped renal failure
-            patients from 148 countries lower creatinine, promote GFR, and step away from dialysis.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.6 }}
-            className="mt-9 flex flex-wrap items-center gap-3"
-          >
-            <Button asChild size="lg" className="rounded-none px-7">
-              <a href="#contact">
-                Book a free consultation
-                <ArrowRight className="size-4" aria-hidden />
-              </a>
-            </Button>
-          </motion.div>
-
-          <motion.dl
-            initial={{ opacity: 0, y: 32 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.75 }}
-            className="mt-12 flex flex-wrap gap-x-14 gap-y-6"
-          >
-            {STATS.map((stat) => (
-              <div key={stat.label}>
-                <dt className="sr-only">{stat.label}</dt>
-                <dd className="font-display text-3xl text-deep-foreground">{stat.value}</dd>
-                <dd className="mt-1 text-xs uppercase tracking-[0.16em] text-deep-foreground/70">
-                  {stat.label}
-                </dd>
-              </div>
-            ))}
-          </motion.dl>
-
-
-          <div className="mt-8 flex items-center gap-3" role="tablist" aria-label="Hero slides">
             {SLIDES.map((s, i) => (
               <button
                 key={s.file}
@@ -129,6 +118,38 @@ export function Hero() {
               </button>
             ))}
           </div>
+        </div>
+      </div>
+
+      <div className="border-b border-border bg-background">
+        <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-8 px-5 py-10 lg:flex-row lg:px-8 lg:py-12">
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground lg:text-left"
+          >
+            Trusted by leading medical associations in China
+          </motion.p>
+
+          <motion.dl
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex flex-wrap justify-center gap-x-12 gap-y-6 lg:justify-end"
+          >
+            {STATS.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <dt className="sr-only">{stat.label}</dt>
+                <dd className="font-display text-2xl text-foreground sm:text-3xl">{stat.value}</dd>
+                <dd className="mt-1 text-xs uppercase tracking-[0.16em] text-muted-foreground">
+                  {stat.label}
+                </dd>
+              </div>
+            ))}
+          </motion.dl>
         </div>
       </div>
     </section>
