@@ -53,19 +53,19 @@ export function Hero() {
         </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-br from-hero-overlay/95 via-hero-overlay-fade/75 to-hero-overlay/90" />
 
-        <div className="relative mx-auto flex h-full max-w-[1280px] flex-col justify-between px-5 pb-14 pt-32 lg:px-8 lg:pb-20 lg:pt-40">
+        <div className="relative mx-auto h-full max-w-[1280px] px-5 lg:px-8">
           <motion.h1
             initial={{ opacity: 0, y: 30, filter: "blur(14px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="max-w-3xl font-display text-[clamp(2.4rem,6vw,5rem)] leading-[1.05] text-deep-foreground text-balance-tight"
+            className="absolute left-5 top-32 max-w-3xl font-display text-[clamp(2.4rem,6vw,5rem)] leading-[1.05] text-deep-foreground text-balance-tight lg:left-8 lg:top-40"
           >
             Advanced kidney care
             <br />
             without dialysis
           </motion.h1>
 
-          <div className="ml-auto w-full max-w-md lg:max-w-lg">
+          <div className="absolute bottom-20 right-5 w-full max-w-md lg:bottom-24 lg:right-8 lg:max-w-lg">
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -92,7 +92,11 @@ export function Hero() {
             </motion.div>
           </div>
 
-          <div className="mt-8 flex items-center gap-3" role="tablist" aria-label="Hero slides">
+          <div
+            className="absolute bottom-8 left-5 flex items-center gap-3 lg:left-8"
+            role="tablist"
+            aria-label="Hero slides"
+          >
             {SLIDES.map((s, i) => (
               <button
                 key={s.file}
