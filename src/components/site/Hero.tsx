@@ -60,9 +60,8 @@ export function Hero() {
             transition={{ duration: 1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="absolute left-5 top-32 max-w-3xl font-display text-[clamp(2.4rem,6vw,5rem)] leading-[1.05] text-deep-foreground text-balance-tight lg:left-8 lg:top-40"
           >
-            Advanced kidney care
-            <br />
-            without dialysis
+            Advanced kidney care{" "}
+            <span className="block">without dialysis</span>
           </motion.h1>
 
           <div className="absolute bottom-20 right-5 w-full max-w-md lg:bottom-24 lg:right-8 lg:max-w-lg">
