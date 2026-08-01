@@ -36,7 +36,7 @@ export function AboutSection() {
           </Reveal>
           <Reveal index={4}>
             <div>
-              <Button asChild size="lg" className="border border-white/30 text-white px-8 py-6 rounded font-label text-label-md hover:bg-white/10 active:bg-white/20 transition-colors uppercase tracking-wider w-full sm:w-auto bg-transparent shadow-none">
+              <Button asChild size="lg" className="border border-white/30 text-white font-bold px-8 py-6 rounded font-label text-label-md hover:bg-white/10 active:bg-white/20 transition-colors uppercase tracking-wider w-full sm:w-auto bg-transparent shadow-none">
                 <a href="#contact">Book</a>
               </Button>
             </div>

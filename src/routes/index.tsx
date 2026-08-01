@@ -111,7 +111,7 @@ export const Route = createFileRoute("/")({
           description: DESCRIPTION,
           medicalSpecialty: "Nephrologic",
           telephone: "+8618187089802",
-          email: "info@shijiazhuanghetaihenghospital.com",
+          email: "shijiazhuanghetaiheng@gmail.com",
           address: {
             "@type": "PostalAddress",
             addressLocality: "Shijiazhuang",

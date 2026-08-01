@@ -45,7 +45,7 @@ export function SiteHeader() {
               </a>
             ))}
           </nav>
-          <a href="tel:+8618187089802" className="bg-white text-primary px-6 py-2.5 rounded-sm font-label text-label-lg uppercase tracking-wider hover:bg-white/90 transition-colors">
+          <a href="tel:+8618187089802" className="bg-white text-primary font-bold px-6 py-2.5 rounded-sm font-label text-label-lg uppercase tracking-wider hover:bg-white/90 transition-colors">
             CALL
           </a>
         </div>
@@ -74,7 +74,7 @@ export function SiteHeader() {
             ))}
             <a
               href="tel:+8618187089802"
-              className="mt-6 text-center bg-white text-primary px-6 py-3 rounded-sm font-label text-label-lg uppercase tracking-wider hover:bg-white/90 transition-colors"
+              className="mt-6 text-center bg-white text-primary font-bold px-6 py-3 rounded-sm font-label text-label-lg uppercase tracking-wider hover:bg-white/90 transition-colors"
             >
               CALL
             </a>

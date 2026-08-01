@@ -83,7 +83,7 @@ export function ContactSection() {
             <button 
               disabled={isSubmitting}
               aria-label="Send message" 
-              className="bg-primary text-on-primary px-8 py-4 rounded font-label text-label-md uppercase tracking-wider hover:bg-primary/90 transition-colors w-full mt-4 disabled:opacity-70" 
+              className="bg-primary text-on-primary font-bold px-8 py-4 rounded font-label text-label-md uppercase tracking-wider hover:bg-primary/90 transition-colors w-full mt-4 disabled:opacity-70" 
               type="submit"
             >
               {isSubmitting ? "Sending..." : "Submit Request"}
@@ -131,8 +131,8 @@ export function ContactSection() {
                 <span aria-hidden="true" className="material-symbols-outlined text-4xl opacity-80">mail</span>
                 <div>
                   <h3 className="font-display text-headline-md mb-2">Email</h3>
-                  <a href="mailto:info@shijiazhuanghetaihenghospital.com" className="font-body text-body-lg opacity-80 hover:text-secondary-fixed transition-colors">
-                    info@shijiazhuanghetaihenghospital.com
+                  <a href="mailto:shijiazhuanghetaiheng@gmail.com" className="font-body text-body-lg opacity-80 hover:text-secondary-fixed transition-colors">
+                    shijiazhuanghetaiheng@gmail.com
                   </a>
                 </div>
               </div>

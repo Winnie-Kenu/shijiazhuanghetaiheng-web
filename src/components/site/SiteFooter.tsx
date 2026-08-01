@@ -59,8 +59,8 @@ export function SiteFooter() {
               </p>
               <p>
                 Email:{" "}
-                <a href="mailto:info@shijiazhuanghetaihenghospital.com" className="hover:text-inverse-primary transition-colors">
-                  info@shijiazhuanghetaihenghospital.com
+                <a href="mailto:shijiazhuanghetaiheng@gmail.com" className="hover:text-inverse-primary transition-colors">
+                  shijiazhuanghetaiheng@gmail.com
                 </a>
               </p>
             </address>
