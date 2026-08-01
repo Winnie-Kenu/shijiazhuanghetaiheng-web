@@ -54,9 +54,23 @@ export function TreatKidneySection() {
             <RevealText text="Alternative Dialysis Treatment" />
           </h2>
           <Reveal index={1}>
-            <p className="font-body text-body-lg text-on-primary/80">
-              We have developed a series of specific treatments for kidney patients. For example, systematic Chinese medicine Toxin-Removing Treatment, an alternative to dialysis. This approach can treat the damaged kidneys from the root.
-            </p>
+            <div className="space-y-6">
+              <p className="font-body text-body-lg text-on-primary/80">
+                We have developed a series of specific treatments for kidney patients. For example, systematic Chinese medicine Toxin-Removing Treatment, an alternative to dialysis. This approach can treat the damaged kidneys from the root.
+              </p>
+              
+              <div className="text-left bg-white/5 p-6 md:p-8 rounded-xl border border-white/10 mt-8">
+                <h3 className="font-display text-2xl font-bold text-white mb-4">Specialized Treatment Areas</h3>
+                <ul className="space-y-4 font-body text-base md:text-lg text-on-primary/90">
+                  <li className="leading-relaxed">
+                    <strong className="text-white">1. Primary & secondary kidney diseases:</strong> Chronic glomerulonephritis, IgA nephropathy, nephrotic syndrome, diabetic nephropathy, hypertensive renal damage
+                  </li>
+                  <li className="leading-relaxed">
+                    <strong className="text-white">2. Dialysis & uremia management:</strong> Hemodialysis individualized plan adjustment, secondary hyperparathyroidism, dialysis-induced hypotension, cardiac damage caused by renal failure, calcium and phosphorus metabolic disorders, dialysis-related limb numbness, muscle cramps and intractable insomnia
+                  </li>
+                </ul>
+              </div>
+            </div>
           </Reveal>
         </div>
 

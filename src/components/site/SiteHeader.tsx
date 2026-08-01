@@ -30,8 +30,12 @@ export function SiteHeader() {
       )}
     >
       <div className="flex justify-between items-center h-20 px-4 md:px-margin-x max-w-container-max mx-auto">
-        <a href="#top" className="font-headline text-on-primary tracking-tight text-xl md:text-2xl truncate pr-4">
-          Shijiazhuang Hetaiheng Hospital
+        <a href="#top" className="flex items-center truncate pr-4">
+          <img 
+            src="https://res.cloudinary.com/idmvpeay/image/upload/v1785612572/kidney-logo_ic2e60.jpg" 
+            alt="Shijiazhuang Hetaiheng Hospital Logo" 
+            className="h-12 w-auto object-contain"
+          />
         </a>
         <div className="hidden md:flex items-center gap-6">
           <nav className="flex gap-6">

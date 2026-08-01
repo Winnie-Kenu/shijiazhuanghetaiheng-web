@@ -1,14 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { heroDesktopImages, coverImg } from "@/lib/hospital-images";
 import { cn } from "@/lib/utils";
-
-
-const SLIDE_MS = 6500;
-const SLIDES = heroDesktopImages.slice(0, 5);
 
 const STATS = [
   { value: "148", label: "Countries served" },
@@ -17,37 +11,24 @@ const STATS = [
 ];
 
 export function Hero() {
-  const [index, setIndex] = useState(0);
-
-  const next = useCallback(() => setIndex((i) => (i + 1) % SLIDES.length), [SLIDES.length]);
-
-  useEffect(() => {
-    const id = window.setInterval(next, SLIDE_MS);
-    return () => window.clearInterval(id);
-  }, [next]);
-
-  const slide = SLIDES[index % SLIDES.length];
-
   return (
     <section id="top" aria-label="Advanced kidney care without dialysis" className="relative isolate">
       <div className="relative min-h-[100svh] md:min-h-[800px] flex flex-col justify-between overflow-hidden bg-primary">
-        <AnimatePresence mode="sync">
-          {slide && (
-            <motion.img
-              key={slide.file}
-              src={coverImg(slide.file, 1920, 1080)}
-              alt={slide.alt}
-              fetchPriority={index === 0 ? "high" : "auto"}
-              loading={index === 0 ? "eager" : "lazy"}
-              decoding="async"
-              initial={{ opacity: 0, scale: 1.08 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ opacity: { duration: 1.2 }, scale: { duration: 8, ease: "linear" } }}
-              className="absolute inset-0 h-full w-full object-cover z-0"
-            />
-          )}
-        </AnimatePresence>
+        <picture>
+          <source media="(max-aspect-ratio: 9/16)" srcSet="https://res.cloudinary.com/idmvpeay/image/upload/v1785415894/mobile-herocaro-NEW_z6z1fh.jpg" />
+          <source media="(max-width: 768px)" srcSet="https://res.cloudinary.com/idmvpeay/image/upload/v1785415894/mobile-herocaro-NEW_z6z1fh.jpg" />
+          <motion.img
+            src="https://res.cloudinary.com/idmvpeay/image/upload/v1785409636/MAINHERO-IMAGE_tpleae.jpg"
+            alt="Shijiazhuang Hetaiheng Hospital - Premium Traditional Chinese Medicine Kidney Care Center providing advanced treatments without dialysis"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            initial={{ opacity: 0, scale: 1.08 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ opacity: { duration: 1.2 }, scale: { duration: 8, ease: "linear" } }}
+            className="absolute inset-0 h-full w-full object-cover z-0"
+          />
+        </picture>
         <div className="absolute inset-0 bg-primary/40 z-0" />
 
         <div className="relative z-10 w-full max-w-container-max mx-auto px-4 md:px-margin-x pt-32 md:pt-48">
@@ -55,9 +36,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 30, filter: "blur(14px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="font-display text-display-lg md:text-md-display-lg max-w-2xl text-on-primary drop-shadow-lg leading-tight"
+            className="font-display text-5xl md:text-[84px] max-w-5xl font-extrabold text-on-primary drop-shadow-2xl leading-tight tracking-tight"
           >
-            Advanced kidney care <span className="block">without dialysis</span>
+            Shijiazhuang Hetaiheng Hospital
           </motion.h1>
         </div>
 
@@ -87,34 +68,6 @@ export function Hero() {
               </Button>
             </motion.div>
           </div>
-        </div>
-        
-        <div
-          className="absolute bottom-8 left-4 md:left-margin-x flex items-center gap-3 z-20"
-          role="tablist"
-          aria-label="Hero slides"
-        >
-          {SLIDES.map((s, i) => (
-            <button
-              key={s.file}
-              type="button"
-              role="tab"
-              aria-selected={i === index}
-              aria-label={`Slide ${i + 1}`}
-              onClick={() => setIndex(i)}
-              className="h-[3px] w-14 overflow-hidden rounded-none bg-white/25"
-            >
-              {i === index && (
-                <motion.span
-                  key={`${s.file}-progress`}
-                  className="block h-full bg-secondary-fixed"
-                  initial={{ width: "0%" }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: SLIDE_MS / 1000, ease: "linear" }}
-                />
-              )}
-            </button>
-          ))}
         </div>
       </div>
 
