@@ -75,7 +75,7 @@ export function Hero() {
             <span className="block">without dialysis</span>
           </motion.h1>
 
-          <div className="absolute bottom-16 right-5 w-full max-w-md text-right lg:bottom-14 lg:right-8 lg:max-w-lg">
+          <div className="absolute bottom-24 right-5 w-full max-w-md text-right lg:bottom-14 lg:right-8 lg:max-w-lg">
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
