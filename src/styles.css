@@ -63,7 +63,7 @@
   --color-deep-foreground: var(--deep-foreground);
   --color-hero-overlay: var(--hero-overlay);
   --color-hero-overlay-fade: var(--hero-overlay-fade);
-  --font-display: "Bodoni Moda", ui-serif, Georgia, serif;
+  --font-display: "EB Garamond", ui-serif, Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
