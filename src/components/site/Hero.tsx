@@ -5,6 +5,8 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { heroDesktopImages, heroMobileImages, coverImg, containImg } from "@/lib/hospital-images";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
+
 
 const SLIDE_MS = 6500;
 
@@ -33,25 +35,32 @@ export function Hero() {
 
   return (
     <section id="top" aria-label="Advanced kidney care without dialysis" className="relative isolate">
-      <div className="relative h-[85svh] min-h-[640px] w-full overflow-hidden">
+      <div className="relative h-[85svh] min-h-[640px] w-full overflow-hidden bg-deep">
         <AnimatePresence mode="sync">
           {slide && (
             <motion.img
               key={slide.file}
-              src={coverImg(slide.file, 1920, 1080)}
+              src={isMobile ? containImg(slide.file, 1200, 1600) : coverImg(slide.file, 1920, 1080)}
               alt={slide.alt}
               fetchPriority={index === 0 ? "high" : "auto"}
               loading={index === 0 ? "eager" : "lazy"}
               decoding="async"
-              initial={{ opacity: 0, scale: 1.08 }}
+              initial={{ opacity: 0, scale: isMobile ? 1 : 1.08 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ opacity: { duration: 1.2 }, scale: { duration: 8, ease: "linear" } }}
-              className="absolute inset-0 h-full w-full object-cover"
+              transition={{
+                opacity: { duration: 1.2 },
+                scale: isMobile ? undefined : { duration: 8, ease: "linear" },
+              }}
+              className={cn(
+                "absolute inset-0 h-full w-full",
+                isMobile ? "object-contain" : "object-cover"
+              )}
             />
           )}
         </AnimatePresence>
         <div className="absolute inset-0 bg-gradient-to-br from-hero-overlay/95 via-hero-overlay-fade/75 to-hero-overlay/90" />
+
 
         <div className="relative mx-auto h-full max-w-[1280px] px-5 lg:px-8">
           <motion.h1
