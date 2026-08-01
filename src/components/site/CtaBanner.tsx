@@ -21,7 +21,7 @@ export function CtaBanner() {
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1.6, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute inset-0 h-full w-full object-contain"
+            className="absolute inset-0 h-full w-full object-cover"
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-r from-deep/92 via-deep/80 to-deep/50" />
