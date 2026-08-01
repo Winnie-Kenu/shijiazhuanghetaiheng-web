@@ -11,6 +11,8 @@ const CLOUDINARY_VIDEOS = [
   "v1785534608/video-4_feyfex.mp4",
   "v1785534606/videos-6_abv2ob.mp4",
   "v1785534608/videos-2_knztep.mp4",
+  "v1785534609/video-10_rqk8ol.mp4",
+  "v1785534612/videos-1_egb28f.mp4",
 ];
 
 export function VideoGallery() {
