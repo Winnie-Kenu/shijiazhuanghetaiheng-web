@@ -42,11 +42,9 @@ export function SiteFooter() {
                 </a>
               </p>
               <p>
-                WhatsApp:{" "}
+                Call :{" "}
                 <a
-                  href="https://wa.me/8615530165253"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="tel:+8615530165253"
                   className="hover:text-accent"
                 >
                   +86 155 3016 5253
