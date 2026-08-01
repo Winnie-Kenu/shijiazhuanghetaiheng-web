@@ -12,6 +12,11 @@ export function coverImg(file: string, width = 1920, height = 1080): string {
   return `${CDN}/f_auto,q_auto,c_fill,g_auto,w_${width},h_${height}/${file}`;
 }
 
+export function containImg(file: string, width = 1200, height = 1600): string {
+  return `${CDN}/f_auto,q_auto,c_limit,w_${width},h_${height}/${file}`;
+}
+
+
 export const doctorsImages: HospitalImage[] = [
   { file: "doctor-img-10_pipjqp.jpg", alt: "Experienced nephrology specialist at an international kidney hospital in China treating chronic kidney disease and kidney failure." },
   { file: "doctor-img-11_djtzcy.jpg", alt: "Experienced nephrology specialist at an international kidney hospital in China treating chronic kidney disease and kidney failure." },
