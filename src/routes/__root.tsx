@@ -78,13 +78,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Hetaiheng Kidney Disease Hospital" },
+      { title: "Shijiazhuang Hetaiheng Hospital" },
       {
         name: "description",
         content:
           "International kidney hospital in Shijiazhuang, China offering advanced non-invasive kidney care.",
       },
-      { property: "og:site_name", content: "Shijiazhuang Hetaiheng Kidney Disease Hospital" },
+      { property: "og:site_name", content: "Shijiazhuang Hetaiheng Hospital" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -100,7 +100,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300..700&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0",
+      },
+    ],
+    scripts: [
+      {
+        children: `console.log("Chatbase script removed for debugging");`,
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -125,6 +133,13 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // @ts-ignore - Chatbase script injects custom properties into window and script elements
+      (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...args)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(args)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...a)=>target(prop,...a)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="HeGY46hxhRZtSkChsylFb";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+    }
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

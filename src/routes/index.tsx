@@ -13,7 +13,6 @@ import { DoctorsSection } from "@/components/site/DoctorsSection";
 import { CooperationSection } from "@/components/site/CooperationSection";
 import { TestimonialsSection } from "@/components/site/TestimonialsSection";
 import { FaqSection, FAQS } from "@/components/site/FaqSection";
-import { CtaBanner } from "@/components/site/CtaBanner";
 import { ContactSection } from "@/components/site/ContactSection";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { treatmentImages, generalImages } from "@/lib/hospital-images";
@@ -108,7 +107,7 @@ export const Route = createFileRoute("/")({
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Hospital",
-          name: "Shijiazhuang Hetaiheng Kidney Disease Hospital",
+          name: "Shijiazhuang Hetaiheng Hospital",
           description: DESCRIPTION,
           medicalSpecialty: "Nephrologic",
           telephone: "+8618187089802",
@@ -154,7 +153,6 @@ function Index() {
         <CooperationSection />
         <TestimonialsSection />
         <FaqSection />
-        <CtaBanner />
         <ContactSection />
       </main>
       <SiteFooter />

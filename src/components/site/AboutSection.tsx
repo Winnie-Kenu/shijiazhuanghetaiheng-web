@@ -1,74 +1,49 @@
-import { EditorialImage } from "./MasonryGallery";
 import { Reveal, RevealText } from "./Reveal";
 import { aboutImages } from "@/lib/hospital-images";
-
-const STATS = [
-  { value: "148", label: "Countries of origin for our patients" },
-  { value: "40,000m²", label: "Campus with villa-style wards" },
-  { value: "20+", label: "National-level TCM experts" },
-  { value: "30 yrs", label: "Of systematic kidney research" },
-];
+import { Button } from "@/components/ui/button";
+import { MasonryGallery } from "./MasonryGallery";
 
 export function AboutSection() {
-  const [a, b, c, d, e, f] = aboutImages;
-
   return (
-    <section id="about" aria-labelledby="about-heading" className="bg-muted/50 py-24 lg:py-36">
-      <div className="mx-auto grid max-w-[1280px] items-start gap-14 px-5 lg:grid-cols-2 lg:gap-20 lg:px-8">
-        <div className="grid grid-cols-2 gap-4 sm:gap-5">
-          <div className="flex flex-col gap-4 pt-10 sm:gap-5">
-            {a && <EditorialImage image={a} ratio="3 / 4" width={720} />}
-            {b && <EditorialImage image={b} ratio="1 / 1" width={620} />}
-            {e && <EditorialImage image={e} ratio="4 / 5" width={620} />}
-          </div>
-          <div className="flex flex-col gap-4 sm:gap-5">
-            {c && <EditorialImage image={c} ratio="4 / 5" width={720} />}
-            {d && <EditorialImage image={d} ratio="5 / 7" width={720} />}
-            {f && <EditorialImage image={f} ratio="1 / 1" width={620} />}
-          </div>
-        </div>
-
-
-        <div className="lg:sticky lg:top-28">
+    <section id="about" aria-labelledby="about-heading" className="bg-primary-container text-on-primary-container py-section-padding-y md:py-md-section-padding-y px-4 md:px-margin-x">
+      <div className="max-w-container-max mx-auto flex flex-col lg:flex-row gap-12 lg:gap-24 overflow-hidden">
+        <div className="lg:w-1/2 flex flex-col justify-center">
           <Reveal>
-            <p className="eyebrow">About us</p>
+            <span aria-hidden="true" className="material-symbols-outlined text-4xl mb-4 md:mb-6 text-primary">
+              menu_book
+            </span>
           </Reveal>
           <h2
             id="about-heading"
-            className="mt-4 font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.06] text-balance-tight"
+            className="font-display text-headline-lg md:text-md-headline-lg mb-6 text-white"
           >
-            <RevealText text="A premier international TCM institution built around the kidney" />
+            <RevealText text="About Us" />
           </h2>
           <Reveal index={1}>
-            <p className="mt-6 text-base leading-relaxed text-muted-foreground lg:text-lg">
-              Shijiazhuang Hetaiheng Hospital spans 40,000 square meters with luxury villa-style
-              wards. Our clinical excellence is driven by the Experts of the International
-              Consultation Center, led by Professor Zhang Daning, Master of Chinese Medicine.
+            <p className="font-body text-body-lg text-white/90 mb-6 leading-relaxed">
+              Shijiazhuang Hetaiheng Hospital is a premier international TCM institution specializing in advanced kidney care, spanning 40,000 square meters with luxury villa-style wards.
             </p>
           </Reveal>
           <Reveal index={2}>
-            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              Our distinguished team includes world-class experts such as Professors Yang Hongtao,
-              Cheng Xiaohong, Liu Xusheng, Deng Yueyi and Wang Yi, alongside representatives of the
-              World Federation of Acupuncture-Moxibustion Societies. Supported by over 20
-              national-level experts, we combine modern research with traditional wisdom to deliver
-              non-invasive, root-cause recovery in a serene, professional environment.
+            <p className="font-body text-body-lg text-white/90 mb-6 leading-relaxed">
+              Our clinical excellence is driven by the Experts of the International Consultation Center, led by Professor Zhang Daning, Master of Chinese Medicine. Our distinguished team includes world-class experts such as Professor Yang Hongtao, Cheng Xiaohong, Liu Xusheng, Professor Deng Yueyi, Professor Wang Yi, and representatives from the World Federation of Acupuncture-Moxibustion Societies.
             </p>
           </Reveal>
-
-          <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-10">
-            {STATS.map((stat, i) => (
-              <Reveal key={stat.label} index={i}>
-                <div>
-                  <dt className="sr-only">{stat.label}</dt>
-                  <dd className="font-display text-4xl text-primary">{stat.value}</dd>
-                  <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {stat.label}
-                  </dd>
-                </div>
-              </Reveal>
-            ))}
-          </dl>
+          <Reveal index={3}>
+            <p className="font-body text-body-lg text-white/90 mb-10 leading-relaxed">
+              Supported by over 20 national-level experts like Professors Zhang Youkang, Zheng Falei, Liu Guangzhen, and Sun Wei, we combine modern research with traditional wisdom to provide non-invasive, root-cause recovery for chronic diseases in a serene, professional environment.
+            </p>
+          </Reveal>
+          <Reveal index={4}>
+            <div>
+              <Button asChild size="lg" className="border border-white/30 text-white px-8 py-6 rounded font-label text-label-md hover:bg-white/10 active:bg-white/20 transition-colors uppercase tracking-wider w-full sm:w-auto bg-transparent shadow-none">
+                <a href="#contact">Book</a>
+              </Button>
+            </div>
+          </Reveal>
+        </div>
+        <div className="lg:w-1/2">
+          <MasonryGallery images={aboutImages} columnsClass="columns-2 sm:columns-2" />
         </div>
       </div>
     </section>

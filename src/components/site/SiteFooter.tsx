@@ -36,30 +36,30 @@ const SOCIALS = [
 
 export function SiteFooter() {
   return (
-    <footer className="bg-deep text-deep-foreground">
-      <div className="mx-auto max-w-[1280px] px-5 py-20 lg:px-8">
+    <footer className="bg-inverse-surface text-inverse-on-surface">
+      <div className="mx-auto max-w-container-max px-5 py-20 lg:px-8">
         <div className="grid gap-14 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,2fr)]">
           <div>
-            <h2 className="font-display text-2xl leading-snug">
-              Shijiazhuang Hetaiheng Kidney Disease Hospital
+            <h2 className="font-display text-2xl leading-snug text-inverse-primary">
+              Shijiazhuang Hetaiheng Hospital
             </h2>
-            <address className="mt-8 space-y-1 text-sm not-italic text-deep-foreground/70">
+            <address className="mt-8 space-y-1 font-body text-sm not-italic opacity-70">
               <p>Shijiazhuang, Hebei, China</p>
               <p>
-                Call:{" "}
-                <a href="tel:+8618187089802" className="hover:text-accent">
+                WhatsApp:{" "}
+                <a href="tel:+8618187089802" className="hover:text-inverse-primary transition-colors">
                   +86 181 8708 9802
                 </a>
               </p>
               <p>
                 Call:{" "}
-                <a href="tel:+8615530165253" className="hover:text-accent">
+                <a href="tel:+8615530165253" className="hover:text-inverse-primary transition-colors">
                   +86 155 3016 5253
                 </a>
               </p>
               <p>
                 Email:{" "}
-                <a href="mailto:info@shijiazhuanghetaihenghospital.com" className="hover:text-accent">
+                <a href="mailto:info@shijiazhuanghetaihenghospital.com" className="hover:text-inverse-primary transition-colors">
                   info@shijiazhuanghetaihenghospital.com
                 </a>
               </p>
@@ -69,7 +69,7 @@ export function SiteFooter() {
           <div className="grid gap-10 sm:grid-cols-3">
             {COLUMNS.map((column) => (
               <nav key={column.title} aria-label={column.title}>
-                <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-deep-foreground/60">
+                <h3 className="font-label text-xs font-semibold uppercase tracking-[0.2em] opacity-60">
                   {column.title}
                 </h3>
                 <ul className="mt-5 space-y-3">
@@ -77,7 +77,7 @@ export function SiteFooter() {
                     <li key={link}>
                       <a
                         href="#treatments"
-                        className="text-sm text-deep-foreground/80 transition-colors hover:text-accent"
+                        className="font-body text-sm opacity-80 transition-colors hover:text-inverse-primary hover:opacity-100"
                       >
                         {link}
                       </a>
@@ -89,33 +89,15 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xs text-deep-foreground/60">
-            © {new Date().getFullYear()} Shijiazhuang Hetaiheng Kidney Disease Hospital. All rights
+        <div className="mt-16 flex flex-col gap-6 border-t border-inverse-on-surface/10 pt-8 sm:flex-row sm:items-center sm:justify-between">
+          <p className="font-body text-xs opacity-60">
+            © {new Date().getFullYear()} Shijiazhuang Hetaiheng Hospital. All rights
             reserved.
           </p>
-          <ul className="flex items-center gap-3">
-            {SOCIALS.map((social) => (
-              <li key={social.label}>
-                <a
-                  href="#top"
-                  aria-label={social.label}
-                  className="grid size-10 place-items-center rounded-none border border-white/15 transition-colors hover:border-accent hover:text-accent"
-                >
-                  <social.icon className="size-4" aria-hidden />
-                </a>
-              </li>
-            ))}
-          </ul>
-          <ul className="flex gap-6 text-xs text-deep-foreground/60">
+          <ul className="flex gap-6 font-body text-xs opacity-60">
             <li>
-              <a href="#top" className="hover:text-accent">
-                Privacy policy
-              </a>
-            </li>
-            <li>
-              <a href="#top" className="hover:text-accent">
-                Terms
+              <a href="#top" className="hover:text-inverse-primary transition-colors">
+                Terms and Conditions
               </a>
             </li>
           </ul>

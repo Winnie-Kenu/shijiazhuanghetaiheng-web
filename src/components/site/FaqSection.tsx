@@ -8,61 +8,49 @@ import { Reveal, RevealText } from "./Reveal";
 
 export const FAQS = [
   {
-    q: "What is kidney failure?",
-    a: "Kidney failure means your kidneys have lost the ability to filter waste from your blood effectively. It is a serious condition, but it is not the end of the road. With modern treatment you can manage the disease and live a full life.",
+    q: "Do you accept foreign patients?",
+    a: "Yes, we treat patients from 148 countries. We provide full support including visa assistance, airport pickup, and dedicated English translators.",
   },
   {
-    q: "Is dialysis painful?",
-    a: "The needle insertion for hemodialysis involves a quick pinch, but the treatment itself is painless. Some patients feel dizzy, sleepy or sick during the session. We use advanced monitors and expert hygiene to make the process as smooth as possible.",
+    q: "How does Toxin-Removing Treatment work?",
+    a: "It combines multiple Chinese therapies (like Micro-Chinese Medicine Osmotherapy and Medicated Bath) to draw out toxins, improve blood circulation in the kidneys, and repair damaged intrinsic cells.",
   },
   {
-    q: "Can diet reverse damage?",
-    a: "Diet alone cannot reverse moderate kidney failure, but it is a powerful tool to slow progression and reduce complications. A precise renal diet minimises potassium, phosphorus and sodium. Our dietitians build a plan that fights alongside your medicine.",
+    q: "Can I stop dialysis?",
+    a: "It depends on your current kidney function, urine output, and kidney size. Many patients have successfully reduced or completely stopped dialysis after our systematic treatment.",
   },
   {
     q: "How much does treatment cost?",
-    a: "Costs vary depending on your specific treatment plan and duration of stay. We work with major insurance carriers and provide a detailed cost-of-care breakdown before you commit to anything.",
+    a: "Costs vary depending on your specific treatment plan and duration of stay. We provide a detailed cost-of-care breakdown after our experts analyze your medical reports.",
   },
   {
-    q: "When can I book?",
-    a: "You can book right now through this website or by calling our front desk. We prioritise urgent cases and aim to see new international patients within 48 hours.",
+    q: "How do I get a consultation?",
+    a: "You can contact us via WhatsApp, email, or our online form. Send us your latest medical reports, and our experts will provide a free analysis and treatment plan.",
   },
 ];
 
 export function FaqSection() {
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="bg-muted/50 py-24 lg:py-36">
-      <div className="mx-auto grid max-w-[1280px] gap-12 px-5 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20 lg:px-8">
-        <div className="lg:sticky lg:top-28 lg:self-start">
-          <Reveal>
-            <p className="eyebrow">FAQs</p>
-          </Reveal>
-          <h2
-            id="faq-heading"
-            className="mt-4 font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.06] text-balance-tight"
-          >
-            <RevealText text="Straight answers to the questions that keep you up at night" />
+    <section id="faq" aria-labelledby="faq-heading" className="bg-surface-container-highest py-section-padding-y md:py-md-section-padding-y px-4 md:px-margin-x">
+      <div className="max-w-3xl mx-auto">
+        <Reveal>
+          <h2 id="faq-heading" className="font-display text-headline-lg md:text-md-headline-lg mb-8 md:mb-12 text-center text-on-surface">
+            <RevealText text="Frequently Asked Questions" />
           </h2>
-          <Reveal index={1}>
-            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
-              Still unsure? Speak directly with a specialist who can give you clear answers about
-              your own lab results.
-            </p>
-          </Reveal>
-        </div>
-
+        </Reveal>
+        
         <Reveal index={1}>
-          <Accordion type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="space-y-4">
             {FAQS.map((faq) => (
               <AccordionItem
                 key={faq.q}
                 value={faq.q}
-                className="border-b border-border last:border-b-0"
+                className="bg-surface px-6 rounded border border-surface-variant/40 group hover:border-primary/30 transition-colors"
               >
-                <AccordionTrigger className="py-7 text-left font-display text-xl leading-snug hover:no-underline sm:text-2xl">
+                <AccordionTrigger className="py-6 text-left hover:no-underline font-display text-headline-sm text-on-surface">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="pb-8 text-base leading-relaxed text-muted-foreground">
+                <AccordionContent className="pb-6 text-body-md text-on-surface-variant font-body">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>

@@ -23,7 +23,7 @@ export function EditorialTreatmentSection({ block }: { block: EditorialBlock }) 
     <section
       id={id}
       aria-labelledby={`${id}-heading`}
-      className={cn("py-24 lg:py-36", tone === "tinted" && "bg-muted/50")}
+      className={cn("py-24 lg:py-36 bg-surface", tone === "tinted" && "bg-surface-container")}
     >
       <div className="mx-auto max-w-[1280px] px-5 lg:px-8">
         <div
@@ -41,28 +41,28 @@ export function EditorialTreatmentSection({ block }: { block: EditorialBlock }) 
 
           <div className="lg:pt-6">
             <Reveal>
-              <p className="eyebrow">{eyebrow}</p>
+              <p className="font-label text-label-md text-primary tracking-widest uppercase">{eyebrow}</p>
             </Reveal>
             <h2
               id={`${id}-heading`}
-              className="mt-4 font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.06] text-balance-tight"
+              className="mt-4 font-display text-[clamp(2rem,4vw,3.5rem)] leading-[1.06] text-on-surface text-balance-tight"
             >
               <RevealText text={title} />
             </h2>
             <Reveal index={1}>
-              <p className="mt-6 text-base leading-relaxed text-muted-foreground lg:text-lg">
+              <p className="mt-6 font-body text-base leading-relaxed text-on-surface-variant lg:text-lg">
                 {intro}
               </p>
             </Reveal>
 
-            <dl className="mt-10 divide-y divide-border border-y border-border">
+            <dl className="mt-10 divide-y divide-outline-variant border-y border-outline-variant">
               {points.map((point, i) => (
                 <Reveal key={point.heading} index={i + 2}>
                   <div className="py-7">
-                    <dt className="font-display text-xl leading-snug text-foreground">
+                    <dt className="font-display text-xl leading-snug text-on-surface">
                       {point.heading}
                     </dt>
-                    <dd className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    <dd className="mt-3 font-body text-sm leading-relaxed text-on-surface-variant">
                       {point.body}
                     </dd>
                   </div>
@@ -73,7 +73,7 @@ export function EditorialTreatmentSection({ block }: { block: EditorialBlock }) 
             <Reveal index={points.length + 2}>
               <a
                 href="#contact"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-colors hover:text-secondary"
+                className="mt-8 inline-flex items-center gap-2 font-label text-sm font-semibold text-primary transition-colors hover:text-primary/80 uppercase tracking-widest"
               >
                 Request a free condition analysis
                 <ArrowUpRight className="size-4" aria-hidden />

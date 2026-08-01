@@ -1,4 +1,3 @@
-import { MasonryGallery } from "./MasonryGallery";
 import { Reveal, RevealText } from "./Reveal";
 import { treatmentImages, img } from "@/lib/hospital-images";
 
@@ -6,32 +5,32 @@ const MODALITIES = [
   {
     image: treatmentImages[0],
     title: "Detoxification Therapy",
-    body: "Also known as Toxin-Removing Treatment: a combination of Chinese therapies that clears accumulated toxins from the body.",
+    body: "It is also known as Toxin-Removing Treatment, which is a combination of Chinese therapies, which can help remove toxins from the body.",
   },
   {
     image: treatmentImages[1],
     title: "Micro-Chinese Medicine",
-    body: "Increases glomerular filtration rate, reduces blood creatinine and urea, protects intrinsic cells and lowers proteinuria.",
+    body: "It can increase glomerular filtration rate (GFR), reduce blood creatinine and urea, protect intrinsic cells, and reduce proteinuria.",
   },
   {
     image: treatmentImages[2],
     title: "Medicated Bath",
-    body: "Regulates immune imbalance, alleviates the three high states of glomeruli and reduces proteinuria, creatinine and urea.",
+    body: "It effectively regulates immune imbalance, alleviates the three high states of glomeruli, and reduces proteinuria, serum creatinine and urea.",
   },
   {
     image: treatmentImages[3],
     title: "Moxibustion Therapy",
-    body: "Helps kidney failure patients reduce proteinuria, increase plasma albumin and bring creatinine levels down.",
+    body: "It can help kidney failure patient reduce proteinuria, increase plasma albumin, and reduce creatinine.",
   },
   {
     image: treatmentImages[4],
     title: "Foot Bath",
-    body: "Promotes blood circulation, relieves edema, improves sleep quality and reduces creatinine levels.",
+    body: "It can help promote blood circulation, relieve edema, improve sleep quality, and reduce creatinine level.",
   },
   {
     image: treatmentImages[5],
     title: "Fumigation Therapy",
-    body: "Protects inherent kidney cells, lowers creatinine and improves edema, nausea and persistent skin itching.",
+    body: "It protects inherent kidney cells, reduces proteinuria, lowers creatinine, and improves edema, nausea, and skin itching.",
   },
 ];
 
@@ -41,54 +40,47 @@ export function TreatKidneySection() {
     <section
       id="treatments"
       aria-labelledby="treatments-heading"
-      className="mx-auto max-w-[1280px] px-5 py-24 lg:px-8 lg:py-36"
+      className="bg-primary text-on-primary py-section-padding-y md:py-md-section-padding-y px-4 md:px-margin-x"
     >
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-end">
-        <div>
+      <div className="max-w-container-max mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
           <Reveal>
-            <p className="eyebrow">Treatments</p>
+            <span className="font-label text-label-md text-secondary-fixed uppercase tracking-widest block mb-4">Treatments</span>
           </Reveal>
           <h2
             id="treatments-heading"
-            className="mt-4 font-display text-[clamp(2.2rem,4.5vw,3.75rem)] leading-[1.05] text-balance-tight"
+            className="font-display text-headline-lg md:text-md-headline-lg mb-6"
           >
-            <RevealText text="How we treat kidney disease at the root" />
+            <RevealText text="Alternative Dialysis Treatment" />
           </h2>
-        </div>
-        <Reveal index={1}>
-          <p className="max-w-xl text-base leading-relaxed text-muted-foreground lg:text-lg">
-            We have developed a series of specific treatments for kidney patients — including the
-            systematic Chinese medicine Toxin-Removing Treatment, an alternative to dialysis that
-            repairs damaged kidneys from the root rather than replacing their function.
-          </p>
-        </Reveal>
-      </div>
-
-      <div className="mt-16 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {MODALITIES.map((item, i) => (
-          <Reveal key={item.title} index={i % 3}>
-            <article className="group flex h-full flex-col rounded-none border border-border bg-card transition-all duration-500 hover:-translate-y-1 hover:border-accent/40 hover:shadow-editorial">
-              {item.image && (
-                <img
-                  src={img(item.image.file, 1200)}
-                  alt={item.image.alt}
-                  loading="lazy"
-                  decoding="async"
-                  className="block h-auto w-full object-contain"
-                />
-              )}
-              <div className="p-8">
-                <h3 className="font-display text-2xl leading-snug">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
-              </div>
-            </article>
-
+          <Reveal index={1}>
+            <p className="font-body text-body-lg text-on-primary/80">
+              We have developed a series of specific treatments for kidney patients. For example, systematic Chinese medicine Toxin-Removing Treatment, an alternative to dialysis. This approach can treat the damaged kidneys from the root.
+            </p>
           </Reveal>
-        ))}
-      </div>
+        </div>
 
-      <div className="mt-16">
-        <MasonryGallery images={treatmentImages.slice(0, 8)} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 lg:gap-x-12 gap-y-12 md:gap-y-20">
+          {MODALITIES.map((item, i) => (
+            <Reveal key={item.title} index={i % 3}>
+              <article className="flex flex-col items-center text-center">
+                {item.image && (
+                  <div className="w-full aspect-[4/3] mb-6 overflow-hidden rounded">
+                    <img
+                      src={img(item.image.file, 800)}
+                      alt={item.image.alt}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                <h3 className="font-display text-headline-md md:text-headline-lg mb-4 text-white">{item.title}</h3>
+                <p className="font-body text-body-md text-on-primary/80 max-w-xs">{item.body}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
