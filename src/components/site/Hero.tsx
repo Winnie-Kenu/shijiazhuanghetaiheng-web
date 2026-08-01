@@ -69,13 +69,13 @@ export function Hero() {
             initial={{ opacity: 0, y: 30, filter: "blur(14px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute left-5 top-32 max-w-3xl font-display text-[clamp(2.4rem,6vw,5rem)] leading-[1.05] text-deep-foreground text-balance-tight lg:left-8 lg:top-40"
+            className="absolute left-5 top-32 max-w-3xl font-display text-[clamp(4.8rem,15vw,6rem)] leading-[1.05] text-deep-foreground text-balance-tight lg:left-8 lg:top-40 lg:text-[clamp(4rem,6vw,5.5rem)]"
           >
             Advanced kidney care{" "}
             <span className="block">without dialysis</span>
           </motion.h1>
 
-          <div className="absolute bottom-10 right-5 w-full max-w-md text-right lg:bottom-14 lg:right-8 lg:max-w-lg">
+          <div className="absolute bottom-20 right-5 w-full max-w-md text-right lg:bottom-14 lg:right-8 lg:max-w-lg">
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.6 }}
-              className="mt-8 flex flex-wrap items-center justify-end gap-3"
+              className="mt-4 flex flex-wrap items-center justify-end gap-3 lg:mt-8"
             >
 
               <Button asChild size="lg" className="rounded-none px-7">
