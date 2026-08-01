@@ -1,3 +1,5 @@
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+
 const COLUMNS = [
   {
     title: "Treatments",
@@ -15,8 +17,21 @@ const COLUMNS = [
   },
   {
     title: "Conditions",
-    links: ["High creatinine", "Stage 4 CKD", "Stage 5 CKD", "Dialysis withdrawal"],
+    links: [
+      "High creatinine",
+      "Stage 4 CKD",
+      "Stage 5 CKD",
+      "Dialysis withdrawal",
+      "Proteinuria",
+    ],
   },
+];
+
+const SOCIALS = [
+  { icon: Facebook, label: "Facebook" },
+  { icon: Instagram, label: "Instagram" },
+  { icon: Linkedin, label: "LinkedIn" },
+  { icon: Youtube, label: "YouTube" },
 ];
 
 export function SiteFooter() {
@@ -31,29 +46,21 @@ export function SiteFooter() {
             <address className="mt-8 space-y-1 text-sm not-italic text-deep-foreground/70">
               <p>Shijiazhuang, Hebei, China</p>
               <p>
-                WhatsApp:{" "}
-                <a
-                  href="https://wa.me/8618187089802"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-accent"
-                >
+                Call:{" "}
+                <a href="tel:+8618187089802" className="hover:text-accent">
                   +86 181 8708 9802
                 </a>
               </p>
               <p>
-                Call :{" "}
-                <a
-                  href="tel:+8615530165253"
-                  className="hover:text-accent"
-                >
+                Call:{" "}
+                <a href="tel:+8615530165253" className="hover:text-accent">
                   +86 155 3016 5253
                 </a>
               </p>
               <p>
                 Email:{" "}
-                <a href="mailto:shijiazhuanghetaiheng@gmail.com" className="hover:text-accent">
-                  shijiazhuanghetaiheng@gmail.com
+                <a href="mailto:info@shijiazhuanghetaihenghospital.com" className="hover:text-accent">
+                  info@shijiazhuanghetaihenghospital.com
                 </a>
               </p>
             </address>
@@ -87,7 +94,25 @@ export function SiteFooter() {
             © {new Date().getFullYear()} Shijiazhuang Hetaiheng Kidney Disease Hospital. All rights
             reserved.
           </p>
+          <ul className="flex items-center gap-3">
+            {SOCIALS.map((social) => (
+              <li key={social.label}>
+                <a
+                  href="#top"
+                  aria-label={social.label}
+                  className="grid size-10 place-items-center rounded-none border border-white/15 transition-colors hover:border-accent hover:text-accent"
+                >
+                  <social.icon className="size-4" aria-hidden />
+                </a>
+              </li>
+            ))}
+          </ul>
           <ul className="flex gap-6 text-xs text-deep-foreground/60">
+            <li>
+              <a href="#top" className="hover:text-accent">
+                Privacy policy
+              </a>
+            </li>
             <li>
               <a href="#top" className="hover:text-accent">
                 Terms
