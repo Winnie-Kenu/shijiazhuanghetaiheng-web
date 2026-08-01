@@ -2,18 +2,10 @@ import { EditorialImage } from "./MasonryGallery";
 import { Reveal, RevealText } from "./Reveal";
 import { doctorsImages } from "@/lib/hospital-images";
 
-const DOCTORS = [
-  { name: "Prof. Zhang Daning", role: "Master of Chinese Medicine" },
-  { name: "Prof. Yang Hongtao", role: "Chief Nephrologist" },
-  { name: "Prof. Cheng Xiaohong", role: "Integrative Nephrology" },
-  { name: "Prof. Liu Xusheng", role: "Renal Research Lead" },
-  { name: "Prof. Deng Yueyi", role: "Chronic Kidney Disease" },
-  { name: "Prof. Wang Yi", role: "Acupuncture & Moxibustion" },
-  { name: "Prof. Zhang Youkang", role: "Dialysis Withdrawal Program" },
-  { name: "Prof. Zheng Falei", role: "Toxin-Removing Treatment" },
-  { name: "Prof. Liu Guangzhen", role: "International Consultation" },
-  { name: "Prof. Sun Wei", role: "Renal Pathology" },
-];
+const DOCTORS = Array.from({ length: 10 }, () => ({
+  name: "Name",
+  role: "Description",
+}));
 
 export function DoctorsSection() {
   return (
