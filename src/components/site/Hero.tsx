@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { heroDesktopImages, heroMobileImages, coverImg } from "@/lib/hospital-images";
+import { heroDesktopImages, heroMobileImages, coverImg, containImg } from "@/lib/hospital-images";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const SLIDE_MS = 6500;
