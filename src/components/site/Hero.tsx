@@ -48,10 +48,12 @@ export function Hero() {
               initial={{ opacity: 0, scale: isMobile ? 1 : 1.08 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
-              transition={{
-                opacity: { duration: 1.2 },
-                scale: isMobile ? undefined : { duration: 8, ease: "linear" },
-              }}
+              transition={
+                isMobile
+                  ? { opacity: { duration: 1.2 } }
+                  : { opacity: { duration: 1.2 }, scale: { duration: 8, ease: "linear" } }
+              }
+
               className={cn(
                 "absolute inset-0 h-full w-full",
                 isMobile ? "object-contain" : "object-cover"
