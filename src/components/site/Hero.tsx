@@ -69,7 +69,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30, filter: "blur(14px)" }}
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{ duration: 1, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute left-5 top-32 max-w-3xl font-display text-[clamp(3.5rem,12vw,5rem)] leading-[1.05] text-deep-foreground text-balance-tight lg:left-8 lg:top-40 lg:text-[clamp(4rem,6vw,5.5rem)]"
+            className="absolute left-5 top-32 max-w-3xl font-display text-[clamp(4rem,13vw,5.5rem)] leading-[1.05] text-deep-foreground text-balance-tight lg:left-8 lg:top-40 lg:text-[clamp(4rem,6vw,5.5rem)]"
           >
             Advanced kidney care{" "}
             <span className="block">without dialysis</span>
