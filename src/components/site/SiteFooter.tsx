@@ -96,7 +96,12 @@ export function SiteFooter() {
           </p>
           <ul className="flex gap-6 font-body text-xs opacity-60">
             <li>
-              <a href="#top" className="hover:text-inverse-primary transition-colors">
+              <a 
+                href="/Cooperation-Agreement.pdf" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-inverse-primary transition-colors"
+              >
                 Terms and Conditions
               </a>
             </li>

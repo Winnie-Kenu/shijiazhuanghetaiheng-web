@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { cn } from "@/lib/utils";
 
 const NAV = [
-  { label: "Home", href: "#top" },
-  { label: "Treatments", href: "#treatments" },
-  { label: "Doctors", href: "#doctors" },
-  { label: "About Us", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", to: "/" as const },
+  { label: "Treatments", to: "/" as const, hash: "treatments" },
+  { label: "Doctors", to: "/" as const, hash: "doctors" },
+  { label: "About Us", to: "/" as const, hash: "about" },
+  { label: "Contact", to: "/" as const, hash: "contact" },
 ];
 
 export function SiteHeader() {
@@ -30,23 +31,24 @@ export function SiteHeader() {
       )}
     >
       <div className="flex justify-between items-center h-20 px-4 md:px-margin-x max-w-container-max mx-auto">
-        <a href="#top" className="flex items-center truncate pr-4">
+        <Link to="/" className="flex items-center truncate pr-4">
           <img 
             src="https://res.cloudinary.com/idmvpeay/image/upload/v1785612572/kidney-logo_ic2e60.jpg" 
             alt="Shijiazhuang Hetaiheng Hospital Logo" 
             className="h-12 w-auto object-contain"
           />
-        </a>
+        </Link>
         <div className="hidden md:flex items-center gap-6">
           <nav className="flex gap-6">
             {NAV.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.to}
+                hash={item.hash}
                 className="font-label text-label-md uppercase tracking-wider text-on-primary/80 hover:text-on-primary transition-colors"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
           <a href="tel:+8618187089802" className="bg-white text-primary font-bold px-6 py-2.5 rounded-sm font-label text-label-lg uppercase tracking-wider hover:bg-white/90 transition-colors">
@@ -67,14 +69,15 @@ export function SiteHeader() {
         <div className="md:hidden absolute top-20 left-0 right-0 bg-primary shadow-lg border-t border-on-primary/10">
           <nav className="flex flex-col py-4 px-4">
             {NAV.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.to}
+                hash={item.hash}
                 className="font-label text-label-lg uppercase tracking-wider text-on-primary py-3 border-b border-on-primary/10"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
             <a
               href="tel:+8618187089802"
