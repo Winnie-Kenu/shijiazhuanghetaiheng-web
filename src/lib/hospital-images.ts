@@ -106,14 +106,11 @@ export const heroDesktopImages: HospitalImage[] = [
 export const galleryImages: HospitalImage[] = [
   { file: "image-gallery-10_wc3dww.jpg", alt: "Clinical facilities and patient care supporting chronic kidney disease treatment at an international kidney hospital." },
   { file: "image-gallery-12_lgitht.jpg", alt: "Clinical facilities and patient care supporting chronic kidney disease treatment at an international kidney hospital." },
-  { file: "image-gallery-13_ldnomh.jpg", alt: "Clinical facilities and patient care supporting chronic kidney disease treatment at an international kidney hospital." },
   { file: "image-gallery-1_jwfx3j.jpg", alt: "Clinical facilities and patient care supporting chronic kidney disease treatment at an international kidney hospital." },
   { file: "image-gallery-2_magekg.jpg", alt: "Clinical facilities and patient care supporting chronic kidney disease treatment at an international kidney hospital." },
   { file: "image-gallery-3_nolwvz.jpg", alt: "Clinical facilities and patient care supporting chronic kidney disease treatment at an international kidney hospital." },
   { file: "image-gallery-4_igedck.jpg", alt: "Clinical facilities and patient care supporting chronic kidney disease treatment at an international kidney hospital." },
   { file: "image-gallery-6_vrzpad.jpg", alt: "Clinical facilities and patient care supporting chronic kidney disease treatment at an international kidney hospital." },
-  { file: "image-gallery-7_plpk1d.jpg", alt: "Clinical facilities and patient care supporting chronic kidney disease treatment at an international kidney hospital." },
-  { file: "image-gallery-8_qpyr97.jpg", alt: "Clinical facilities and patient care supporting chronic kidney disease treatment at an international kidney hospital." },
   { file: "image-gallery-9_xnjtmg.jpg", alt: "Clinical facilities and patient care supporting chronic kidney disease treatment at an international kidney hospital." },
 ];
 
