@@ -81,78 +81,103 @@ const BLOCKS: EditorialBlock[] = [
   },
 ];
 
+import { getHomePageData, getSiteSettings } from "@/lib/sanity-queries";
+
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: TITLE },
-      { name: "description", content: DESCRIPTION },
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
-      {
-        property: "og:image",
-        content: "https://res.cloudinary.com/idmvpeay/image/upload/f_auto,q_auto,w_1200/MAINHERO-IMAGE_tpleae.jpg",
-      },
-      { name: "twitter:card", content: "summary_large_image" },
-      {
-        name: "twitter:image",
-        content: "https://res.cloudinary.com/idmvpeay/image/upload/f_auto,q_auto,w_1200/MAINHERO-IMAGE_tpleae.jpg",
-      },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Hospital",
-          name: "Shijiazhuang Hetaiheng Hospital",
-          description: DESCRIPTION,
-          medicalSpecialty: "Nephrologic",
-          telephone: "+8618187089802",
-          email: "shijiazhuanghetaiheng@gmail.com",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Shijiazhuang",
-            addressRegion: "Hebei",
-            addressCountry: "CN",
-          },
-        }),
-      },
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: FAQS.map((faq) => ({
-            "@type": "Question",
-            name: faq.q,
-            acceptedAnswer: { "@type": "Answer", text: faq.a },
-          })),
-        }),
-      },
-    ],
-  }),
+  staleTime: 0,
+  loader: async () => {
+    try {
+      const homePage = await getHomePageData();
+      const settings = await getSiteSettings();
+      return { homePage, settings };
+    } catch (error) {
+      console.error("Failed to fetch Sanity data:", error);
+      return { homePage: null, settings: null };
+    }
+  },
+  head: ({ loaderData }) => {
+    const title = loaderData?.settings?.seoTitle || TITLE;
+    const description = loaderData?.settings?.seoDescription || DESCRIPTION;
+    const ogImage = "https://res.cloudinary.com/idmvpeay/image/upload/f_auto,q_auto,w_1200/MAINHERO-IMAGE_tpleae.jpg";
+    
+    return {
+      meta: [
+        { title: title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "/" },
+        {
+          property: "og:image",
+          content: ogImage,
+        },
+        { name: "twitter:card", content: "summary_large_image" },
+        {
+          name: "twitter:image",
+          content: ogImage,
+        },
+      ],
+      links: [{ rel: "canonical", href: "/" }],
+      scripts: [
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Hospital",
+            name: "Shijiazhuang Hetaiheng Hospital",
+            description: description,
+            medicalSpecialty: "Nephrologic",
+            telephone: "+8618187089802",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Shijiazhuang",
+              addressRegion: "Hebei",
+              addressCountry: "CN",
+            },
+          }),
+        },
+        {
+          type: "application/ld+json",
+          children: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: (loaderData?.homePage?.faqs || FAQS).map((faq: any) => ({
+              "@type": "Question",
+              name: faq.question || faq.q,
+              acceptedAnswer: { "@type": "Answer", text: faq.answer || faq.a },
+            })),
+          }),
+        },
+      ],
+    };
+  },
   component: Index,
 });
 
 function Index() {
+  const { homePage, settings } = Route.useLoaderData();
+  const editorialBlocks = homePage?.editorialBlocks || BLOCKS;
+  
   return (
     <div className="bg-background text-foreground">
       <SiteHeader />
       <main>
-        <Hero />
+        <Hero
+          title={homePage?.hero?.title}
+          subtitle={homePage?.hero?.subtitle}
+          buttonText={homePage?.hero?.buttonText}
+        />
         <TreatKidneySection />
-        {BLOCKS.map((block) => (
-          <EditorialTreatmentSection key={block.id} block={block} />
+        {editorialBlocks.map((block: any) => (
+          <EditorialTreatmentSection key={block.id || block._key} block={block} />
         ))}
         <GallerySection />
         <AboutSection />
         <DoctorsSection />
         <CooperationSection />
         <TestimonialsSection />
-        <FaqSection />
+        <FaqSection faqs={homePage?.faqs} />
         <ContactSection />
       </main>
       <SiteFooter />

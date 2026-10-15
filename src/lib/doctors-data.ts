@@ -18,7 +18,7 @@ export const DOCTORS: Doctor[] = [
     slug: "wang-chengying",
     name: "Dr. Wang Chengying",
     title: "Chief Physician, Associate Professor",
-    image: doctorsImages[0],
+    image: doctorsImages[0]!,
     bio: [
       {
         text: "Hebei Provincial People’s Hospital (Grade A Tertiary General Hospital)\n\nCurrent Positions:\nSenior TCM Rehabilitation Specialist, Acupuncture & Tuina Department, Hebei Provincial People’s Hospital\nHe regularly joins multidisciplinary nephrology joint consultation at Shijiazhuang Hetaiheng Hospital, providing auxiliary TCM rehabilitation treatment for global kidney & dialysis patients.",
@@ -29,7 +29,7 @@ export const DOCTORS: Doctor[] = [
     slug: "guo-sheng",
     name: "Director Guo Sheng",
     title: "Associate Chief Physician",
-    image: doctorsImages[1],
+    image: doctorsImages[1]!,
     bio: [
       {
         text: "Core Nephrology Specialist of Shijiazhuang Hetaiheng Hospital\n\nCurrent Positions:\nSenior attending physician of integrated Chinese & Western Nephrology Department, Shijiazhuang Hetaiheng Hospital\nCore member of Zhang Daning National TCM Master Studio\nHe cooperates with Professor Tan Jinchuan to carry out multidisciplinary joint consultations, providing standardized dialysis management and integrated Chinese-Western medicine treatment for global patients from Africa, the Middle East and Southeast Asia.",
@@ -40,7 +40,7 @@ export const DOCTORS: Doctor[] = [
     slug: "chen-dongjun",
     name: "Dr. Chen Dongjun",
     title: "Chief Physician",
-    image: doctorsImages[2],
+    image: doctorsImages[2]!,
     bio: [
       {
         text: "Dr. Chen Dongjun is a Chief Physician specializing in nephrology, with extensive expertise in the diagnosis and treatment of various kidney diseases.",
@@ -63,7 +63,7 @@ export const DOCTORS: Doctor[] = [
     slug: "shi-wei",
     name: "Dr. Shi Wei",
     title: "Chief Physician",
-    image: doctorsImages[3],
+    image: doctorsImages[3]!,
     bio: [
       {
         text: "Dr. Shi Wei is a Chief Physician and distinguished figure in the field of Chinese medicine nephrology. Currently serving as a Committee Member of the Nephrology Branch of the Chinese Association of Chinese Medicine, Director of the Hebei Provincial Acupoint External Therapy Committee of Chinese Medicine, and Executive Director of the Acupuncture and Moxibustion Society, he integrates traditional Chinese medicine (TCM) with modern therapeutic approaches.",
@@ -82,7 +82,7 @@ export const DOCTORS: Doctor[] = [
     slug: "suo-fen",
     name: "Dr. Suo Fen",
     title: "Attending Physician",
-    image: doctorsImages[4],
+    image: doctorsImages[4]!,
     bio: [
       {
         text: "Dr. Suo Fen is an Attending Physician with over 30 years of experience in Traditional Chinese Medicine (TCM). Currently, she serves as the Director of the Outpatient Department at Shijiazhuang Hetaiheng Hospital.",
@@ -101,7 +101,7 @@ export const DOCTORS: Doctor[] = [
     slug: "liu-dechang",
     name: "Dr. Liu Dechang",
     title: "Deputy Chief Physician of Nephrology",
-    image: doctorsImages[5],
+    image: doctorsImages[5]!,
     bio: [
       {
         text: "Core Nephrology Specialist at the Hospital, affiliated with the Master of Traditional Chinese Medicine Zhang Daning's Studio Diagnosis and Treatment Team.",
@@ -120,7 +120,7 @@ export const DOCTORS: Doctor[] = [
     slug: "xie-jinyu",
     name: "Dr. Xie Jinyu",
     title: "Chief Physician",
-    image: doctorsImages[6],
+    image: doctorsImages[6]!,
     bio: [
       {
         text: "Member of the Hebei Provincial Medical Association Nephrology Committee, recipient of the Third Prize for Scientific and Technological Achievements in Hebei Province and the First Prize for Science and Technology from the Hebei Provincial Association of Traditional Chinese Medicine, and a team member of the Zhang Daning National Master of Traditional Chinese Medicine Studio.",
@@ -139,7 +139,7 @@ export const DOCTORS: Doctor[] = [
     slug: "tang-junting",
     name: "Dr. Tang Junting",
     title: "Deputy Chief Physician",
-    image: doctorsImages[7],
+    image: doctorsImages[7]!,
     bio: [
       {
         text: "Dr. Tang Junting is the Deputy Chief Physician and Director of our dialysis center.",
@@ -162,7 +162,7 @@ export const DOCTORS: Doctor[] = [
     slug: "jia-yubo",
     name: "Dr. Jia Yubo",
     title: "Director of Nephropathy Department",
-    image: doctorsImages[8],
+    image: doctorsImages[8]!,
     bio: [
       {
         text: "Core Backbone Physician of Zhang Daning Traditional Chinese Medicine Master Studio, Member of Nephropathy Diagnosis and Treatment Team of Integrated Traditional Chinese and Western Medicine.\n\nLong-term responsible for the management of inpatient wards, the whole process of diagnosis and treatment of inpatients, while participating in outpatient reception, consultation of overseas kidney patients, in-hospital case discussion and teaching of young doctors.",
@@ -177,7 +177,7 @@ export const DOCTORS: Doctor[] = [
     slug: "tan-jinchuan",
     name: "Professor Tan Jinchuan",
     title: "Chief Physician, Second-Class Professor",
-    image: doctorsImages[9],
+    image: doctorsImages[9]!,
     bio: [
       {
         text: "MD, Doctoral Supervisor\nFamous TCM Doctor of Hebei Province\nAdvanced Worker of National Health System\nNational Outstanding Clinical Talent of Traditional Chinese Medicine\n\nCurrent Positions:\nDirector of the First Nephrology Department & Chief Expert of Nephrology, Hebei Provincial Hospital of Traditional Chinese Medicine\nAcademic Leader of National Key Clinical Specialty (Nephrology)\nHe regularly holds multidisciplinary joint consultations at Shijiazhuang Hetaiheng Hospital to treat kidney disease & dialysis patients worldwide.",

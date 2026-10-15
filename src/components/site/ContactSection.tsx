@@ -62,13 +62,6 @@ export function ContactSection() {
             />
             <input 
               required
-              name="email"
-              className="bg-surface border border-outline-variant rounded px-4 py-3 font-body text-body-md text-on-surface focus:outline-none focus:border-primary transition-colors" 
-              placeholder="Email Address" 
-              type="email" 
-            />
-            <input 
-              required
               name="phone"
               className="bg-surface border border-outline-variant rounded px-4 py-3 font-body text-body-md text-on-surface focus:outline-none focus:border-primary transition-colors" 
               placeholder="WhatsApp / Phone Number" 
@@ -126,18 +119,6 @@ export function ContactSection() {
               </div>
             </Reveal>
             
-            <Reveal index={2}>
-              <div className="flex items-start gap-4">
-                <span aria-hidden="true" className="material-symbols-outlined text-4xl opacity-80">mail</span>
-                <div>
-                  <h3 className="font-display text-headline-md mb-2">Email</h3>
-                  <a href="mailto:shijiazhuanghetaiheng@gmail.com" className="font-body text-body-lg opacity-80 hover:text-secondary-fixed transition-colors">
-                    shijiazhuanghetaiheng@gmail.com
-                  </a>
-                </div>
-              </div>
-            </Reveal>
-
             <Reveal index={3}>
               <div className="flex items-start gap-4">
                 <span aria-hidden="true" className="material-symbols-outlined text-4xl opacity-80">phone_enabled</span>

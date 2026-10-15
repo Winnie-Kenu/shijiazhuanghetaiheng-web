@@ -25,11 +25,19 @@ export const FAQS = [
   },
   {
     q: "How do I get a consultation?",
-    a: "You can contact us via WhatsApp, email, or our online form. Send us your latest medical reports, and our experts will provide a free analysis and treatment plan.",
+    a: "You can contact us via WhatsApp or our online form. Send us your latest medical reports, and our experts will provide a free analysis and treatment plan.",
   },
 ];
 
-export function FaqSection() {
+interface FaqSectionProps {
+  faqs?: Array<{ question?: string; answer?: string; q?: string; a?: string }>;
+}
+
+export function FaqSection({ faqs }: FaqSectionProps) {
+  const faqItems = faqs && faqs.length > 0
+    ? faqs.map((f) => ({ q: f.question || f.q || "", a: f.answer || f.a || "" }))
+    : FAQS;
+
   return (
     <section id="faq" aria-labelledby="faq-heading" className="bg-surface-container-highest py-section-padding-y md:py-md-section-padding-y px-4 md:px-margin-x">
       <div className="max-w-3xl mx-auto">
@@ -41,7 +49,7 @@ export function FaqSection() {
         
         <Reveal index={1}>
           <Accordion type="single" collapsible className="space-y-4">
-            {FAQS.map((faq) => (
+            {faqItems.map((faq) => (
               <AccordionItem
                 key={faq.q}
                 value={faq.q}

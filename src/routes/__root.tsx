@@ -90,6 +90,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       {
+        rel: "icon",
+        href: "https://res.cloudinary.com/idmvpeay/image/upload/v1785612572/kidney-logo_ic2e60.jpg",
+      },
+      {
         rel: "stylesheet",
         href: appCss,
       },
@@ -98,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://res.cloudinary.com" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300..700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300..700&family=Outfit:wght@400..800&display=swap",
       },
       {
         rel: "stylesheet",

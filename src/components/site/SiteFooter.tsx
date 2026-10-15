@@ -57,12 +57,6 @@ export function SiteFooter() {
                   +86 155 3016 5253
                 </a>
               </p>
-              <p>
-                Email:{" "}
-                <a href="mailto:shijiazhuanghetaiheng@gmail.com" className="hover:text-inverse-primary transition-colors">
-                  shijiazhuanghetaiheng@gmail.com
-                </a>
-              </p>
             </address>
           </div>
 
