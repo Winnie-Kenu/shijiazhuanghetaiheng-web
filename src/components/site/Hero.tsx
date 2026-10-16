@@ -100,9 +100,9 @@ export function Hero({ title, subtitle, buttonText }: HeroProps) {
                 initial={{ opacity: 0, y: 30, scale: 0.98 }}
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-white rounded-lg shadow-2xl p-7 sm:p-9 md:p-10 lg:p-12 w-full max-w-[460px] text-left border border-white/40"
+                className="bg-white/15 backdrop-blur-md rounded-lg shadow-2xl p-7 sm:p-9 md:p-10 lg:p-12 w-full max-w-[460px] text-left border border-white/30"
               >
-                <h2 className="font-display text-3xl sm:text-4xl lg:text-[40px] font-bold text-primary leading-[1.18] tracking-tight mb-8">
+                <h2 className="font-display text-3xl sm:text-4xl lg:text-[40px] font-bold text-white leading-[1.18] tracking-tight mb-8">
                   Contact Our Expert<br />
                   Kidney Specialist
                 </h2>
